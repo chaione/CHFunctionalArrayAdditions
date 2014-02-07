@@ -116,11 +116,8 @@
 			isa = PBXGroup;
 			children = (
 				DBFD566818A572CB005AB3A6 /* Source */,
-				DBFD564218A572BF005AB3A6 /* CHAppDelegate.h */,
-				DBFD564318A572BF005AB3A6 /* CHAppDelegate.m */,
-				DBFD564518A572BF005AB3A6 /* Main.storyboard */,
-				DBFD564818A572BF005AB3A6 /* CHViewController.h */,
-				DBFD564918A572BF005AB3A6 /* CHViewController.m */,
+				DBFD566E18A573EF005AB3A6 /* App Delegate and Storyboard */,
+				DBFD566F18A573FE005AB3A6 /* RootVC */,
 				DBFD564B18A572BF005AB3A6 /* Images.xcassets */,
 				DBFD563A18A572BF005AB3A6 /* Supporting Files */,
 			);
@@ -163,6 +160,25 @@
 				DBFD566A18A5737A005AB3A6 /* NSArray+CHFunctionalAdditions.m */,
 			);
 			name = Source;
+			sourceTree = "<group>";
+		};
+		DBFD566E18A573EF005AB3A6 /* App Delegate and Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				DBFD564218A572BF005AB3A6 /* CHAppDelegate.h */,
+				DBFD564318A572BF005AB3A6 /* CHAppDelegate.m */,
+				DBFD564518A572BF005AB3A6 /* Main.storyboard */,
+			);
+			name = "App Delegate and Storyboard";
+			sourceTree = "<group>";
+		};
+		DBFD566F18A573FE005AB3A6 /* RootVC */ = {
+			isa = PBXGroup;
+			children = (
+				DBFD564818A572BF005AB3A6 /* CHViewController.h */,
+				DBFD564918A572BF005AB3A6 /* CHViewController.m */,
+			);
+			name = RootVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
