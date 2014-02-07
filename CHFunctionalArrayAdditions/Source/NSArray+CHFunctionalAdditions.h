@@ -59,7 +59,7 @@
  * @param block The block that combines accumulator and value
  * @return A reduced value
  */
-- (id)__attribute__((nonnull(2)))ch_foldLeftWithStart:(id)start reduce:(id (^)(id, id))block;
+- (id)__attribute__((nonnull(2)))ch_foldLeftWithStart:(id)start reduce:(id (^)(id start, id accumulator))block;
 
 /**
  * Takes an array and applies the function in zip to objects from both arrays
@@ -71,5 +71,5 @@
  * @param zip The function that will be applied to the elements from each array.
  * @return A new array with the elements that are the results of the zip function.
  */
-- (NSArray *)__attribute__((nonnull(1, 2)))ch_zipWith:(NSArray *)array zip:(id (^)(id, id))block;
+- (NSArray *)__attribute__((nonnull(1, 2)))ch_zipWith:(NSArray *)array zip:(id (^)(id obj1, id obj2))block;
 @end

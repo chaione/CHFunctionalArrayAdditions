@@ -44,7 +44,7 @@
     return [NSArray arrayWithArray:subset];
 }
 
-- (id)ch_foldLeftWithStart:(id)start reduce:(id (^)(id, id))block {
+- (id)ch_foldLeftWithStart:(id)start reduce:(id (^)(id start, id accumulator))block {
     for(id object in self) {
         start = block(start, object);
     }
@@ -52,7 +52,7 @@
     return start;
 }
 
-- (NSArray *)ch_zipWith:(NSArray *)array zip:(id (^)(id, id))block {
+- (NSArray *)ch_zipWith:(NSArray *)array zip:(id (^)(id obj1, id obj2))block {
     NSInteger minCount = MIN(self.count, array.count);
     NSMutableArray *zippedArray = [NSMutableArray new];
 
