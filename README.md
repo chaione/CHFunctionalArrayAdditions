@@ -14,14 +14,14 @@ Here are some examples of use cases for the provided methods.
 ```
 NSArray *numbers = @[@1, @2, @3, @4, @5, @6];
 
-   NSNumber *reduced = [[[numbers ch_filter:^BOOL(NSNumber *obj) {
-        return obj.integerValue % 3 == 0;
-    }]ch_map:^id(NSNumber *obj) {
-        return @(obj.integerValue * obj.integerValue);
-    }]ch_foldLeftWithStart:@0 reduce:^id(NSNumber *start, NSNumber *accumulator) {
-        return @(start.integerValue + accumulator.integerValue);
-    }];
-    NSLog(@"%@", reduced); // reduced to 45
+NSNumber *reduced = [[[numbers ch_filter:^BOOL(NSNumber *obj) {
+      return obj.integerValue % 3 == 0;
+   }]ch_map:^id(NSNumber *obj) {
+      return @(obj.integerValue * obj.integerValue);
+   }]ch_foldLeftWithStart:@0 reduce:^id(NSNumber *start, NSNumber *accumulator) {
+      return @(start.integerValue + accumulator.integerValue);
+}];
+NSLog(@"%@", reduced); // reduced to 45
 ```
 
 `-ch_filter:` applies a block to each element in the array, and returns a new array consisting of only elements that pass the predicate in the block.
@@ -39,7 +39,14 @@ Also available:
   } catch:^void(NSError *error) {
        NSLog(@"%@",error);
   }];
- ```
+```
  
  And finally, `-ch_zipWith:zip:` which is functionally the same as `-ch_map:`, except it takes another array in addition to the source array, and combines their elements within the block passed to the `zip` parameter.
 
+Installation
+===========
+CHFunctionalArrayAdditions uses [cocoapods](http://cocoapods.org), though it requires a few steps since it is using the private [ChaiKit-Specs](https://github.com/chaione/ChaiKit-Specs) repo, so a few additional steps are required to be able to pull it in, which you can find [here](http://guides.cocoapods.org/making/private-cocoapods.html). Once that is done just put `pod 'CHFunctionalArrayAdditions' :head` into your podfile and install like normal. then just `#import "CHFunctionalArrayAdditions/CHFunctionalArrayAdditions.h"` wherever you want to use it.
+
+Contributing
+===========
+Contributions and improvements are welcome. Just fork the project and submit a pull request. Make sure you check out the [contributing document](http://github.com/chaione/CHFunctionalArrayAdditions/blob/master/CONTRIBUTING.md) first.
