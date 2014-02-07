@@ -20,7 +20,8 @@
 		DBFD565418A572BF005AB3A6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBFD563318A572BF005AB3A6 /* Foundation.framework */; };
 		DBFD565518A572BF005AB3A6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBFD563718A572BF005AB3A6 /* UIKit.framework */; };
 		DBFD565D18A572BF005AB3A6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DBFD565B18A572BF005AB3A6 /* InfoPlist.strings */; };
-		DBFD565F18A572BF005AB3A6 /* CHFunctionalArrayAdditionsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DBFD565E18A572BF005AB3A6 /* CHFunctionalArrayAdditionsTests.m */; };
+		DBFD566B18A5737A005AB3A6 /* NSArray+CHFunctionalAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = DBFD566A18A5737A005AB3A6 /* NSArray+CHFunctionalAdditions.m */; };
+		DBFD566D18A5739B005AB3A6 /* CH_functional_array_tests.m in Sources */ = {isa = PBXBuildFile; fileRef = DBFD566C18A5739B005AB3A6 /* CH_functional_array_tests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +53,9 @@
 		DBFD565218A572BF005AB3A6 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		DBFD565A18A572BF005AB3A6 /* CHFunctionalArrayAdditionsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CHFunctionalArrayAdditionsTests-Info.plist"; sourceTree = "<group>"; };
 		DBFD565C18A572BF005AB3A6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		DBFD565E18A572BF005AB3A6 /* CHFunctionalArrayAdditionsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CHFunctionalArrayAdditionsTests.m; sourceTree = "<group>"; };
+		DBFD566918A5737A005AB3A6 /* NSArray+CHFunctionalAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSArray+CHFunctionalAdditions.h"; path = "Source/NSArray+CHFunctionalAdditions.h"; sourceTree = "<group>"; };
+		DBFD566A18A5737A005AB3A6 /* NSArray+CHFunctionalAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSArray+CHFunctionalAdditions.m"; path = "Source/NSArray+CHFunctionalAdditions.m"; sourceTree = "<group>"; };
+		DBFD566C18A5739B005AB3A6 /* CH_functional_array_tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CH_functional_array_tests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,7 +141,7 @@
 		DBFD565818A572BF005AB3A6 /* CHFunctionalArrayAdditionsTests */ = {
 			isa = PBXGroup;
 			children = (
-				DBFD565E18A572BF005AB3A6 /* CHFunctionalArrayAdditionsTests.m */,
+				DBFD566C18A5739B005AB3A6 /* CH_functional_array_tests.m */,
 				DBFD565918A572BF005AB3A6 /* Supporting Files */,
 			);
 			path = CHFunctionalArrayAdditionsTests;
@@ -156,6 +159,8 @@
 		DBFD566818A572CB005AB3A6 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				DBFD566918A5737A005AB3A6 /* NSArray+CHFunctionalAdditions.h */,
+				DBFD566A18A5737A005AB3A6 /* NSArray+CHFunctionalAdditions.m */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -260,6 +265,7 @@
 			files = (
 				DBFD564018A572BF005AB3A6 /* main.m in Sources */,
 				DBFD564418A572BF005AB3A6 /* CHAppDelegate.m in Sources */,
+				DBFD566B18A5737A005AB3A6 /* NSArray+CHFunctionalAdditions.m in Sources */,
 				DBFD564A18A572BF005AB3A6 /* CHViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -268,7 +274,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DBFD565F18A572BF005AB3A6 /* CHFunctionalArrayAdditionsTests.m in Sources */,
+				DBFD566D18A5739B005AB3A6 /* CH_functional_array_tests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
