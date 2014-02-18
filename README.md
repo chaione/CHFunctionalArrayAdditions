@@ -1,4 +1,4 @@
-ChFunctionalArrayAdditions
+CHFunctionalArrayAdditions
 ===========
 
 A few functional additions to NSArray such as `ch_map:` and `ch_filter:` that make working with NSArray much simpler and cleaner.
