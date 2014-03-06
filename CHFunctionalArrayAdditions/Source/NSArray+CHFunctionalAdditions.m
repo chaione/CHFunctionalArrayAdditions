@@ -63,4 +63,19 @@
 
     return [NSArray arrayWithArray:zippedArray];
 }
+
+- (NSArray *)ch_flatten {
+    NSMutableArray *array = [NSMutableArray array];
+    for(id obj in self) {
+        if([obj isKindOfClass:[NSArray class]]) {
+            [array addObjectsFromArray:[obj ch_flatten]];
+        }
+        else {
+            [array addObject:obj];
+        }
+    }
+
+    return [NSArray arrayWithArray:array];
+}
+
 @end

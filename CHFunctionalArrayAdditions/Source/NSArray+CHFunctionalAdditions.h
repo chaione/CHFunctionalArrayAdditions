@@ -72,4 +72,14 @@
  * @return A new array with the elements that are the results of the zip function.
  */
 - (NSArray *)__attribute__((nonnull(1, 2)))ch_zipWith:(NSArray *)array zip:(id (^)(id obj1, id obj2))block;
+
+/**
+* Reduces an array of arrays to a single dimensional array.
+* Operates recursively, so infinitely nested arrays such as
+* @[@[@1,@[@2,@[@3,@[@4,@[@5], @6], @7], @8], @9], @10] will be reliably
+* reduced to a single dimensional array.
+*
+* @return A new array that results from flattening the source array.
+*/
+- (NSArray *)ch_flatten;
 @end
