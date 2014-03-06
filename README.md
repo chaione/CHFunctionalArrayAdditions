@@ -32,7 +32,7 @@ NSLog(@"%@", reduced); // reduced to 45
 
 Also available:
 
-`-ch_tryMap:catch:` The same as `-ch_map:` expect with an error passed into the block, and a block that can be used to handle errors. Can be used as such:
+`-ch_tryMap:catch:` Which is the same as `-ch_map:` expect with an error passed into the block, and a block that can be used to handle errors. Can be used as such:
 ```
 [filePaths tryMap:^id(NSString *obj, NSError **errorPtr) {
        return [NSData dataWithContentsOfFile:obj options:NSDataReadingUncached error:errorPtr];
@@ -40,7 +40,13 @@ Also available:
        NSLog(@"%@",error);
   }];
 ```
- 
+ `-ch_flatten` Which simply reduces a multi-dimensional array to a single dimension.
+
+ ```
+ NSArray *flat = @[@[@1,@[@2,@[@3,@[@4,@[@5], @6], @7], @8], @9], @10].ch_flatten;
+ /// flat == @[@1, @2, @3, @4, @5, @6, @7, @8, @9, @10]
+ ```
+
  And finally, `-ch_zipWith:zip:` which is functionally the same as `-ch_map:`, except it takes another array in addition to the source array, and combines their elements within the block passed to the `zip` parameter.
 
 Installation
