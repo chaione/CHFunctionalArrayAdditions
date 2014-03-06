@@ -64,12 +64,22 @@
 - (void)test_try_map_function {
     NSArray *badFilePaths = @[@"not a path", @"bad path", @"try again"];
 
-    NSArray *dataFromPaths = [badFilePaths ch_tryMap:^id(id obj, NSError *__autoreleasing *errorPtr) {
+    NSArray *dataFromPaths = [badFilePaths ch_tryMap:^id(id obj, NSError **errorPtr) {
         return [NSData dataWithContentsOfFile:obj options:NSDataReadingMapped error:errorPtr];
     }                                          catch:^(NSError *error) {
         XCTAssertNotNil(error, @"Error should not be nil");
     }];
     XCTAssertNil(dataFromPaths, @"Should be nil");
+}
+
+- (void)test_flatten {
+    NSArray *flat = @[@[@1,@[@2,@[@3,@[@4,@[@5], @6], @7], @8], @9], @10].ch_flatten;
+    NSArray *final = @[@1, @2, @3, @4, @5, @6, @7, @8, @9, @10];
+    XCTAssertEqualObjects(flat, final, @"should be equal");
+    
+    NSArray *alreadyFlat = @[@1, @2, @3, @4, @5].ch_flatten;
+    NSArray *normal = @[@1, @2, @3, @4, @5];
+    XCTAssertEqualObjects(alreadyFlat, normal, @"should be no change");
 }
 @end
 
